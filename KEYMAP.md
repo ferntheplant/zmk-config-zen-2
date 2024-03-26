@@ -1,6 +1,24 @@
-# Keylayout
+# Keymap
 
-Here is a list of keys I need on my keyboard not in my thumb cluster (reserved for mods + enter + spc/bspc + tab + esc)
+## Alpha Layout
+
+I am not switching from QWERTY so I am comfortable using different keyboards for gaming and at others' desks.
+
+## Thumb cluster logic
+ 
+- Can't have `CMD` on mod-tap key since I need to tap it for windows and hold for mac
+- Can't have `BSPC` be mod-tap since I hold it to delete multiple chars
+- `CTRL` used frequently in terminals/windows so put it in thumb cluster mod tap
+- `ALT` used frequently with Zellij so put it in thumb cluster mod tap
+- `TAB` used frequently so put it in thumb cluster
+- `SPACE` used *most* freuqnetly so put it on *main* thumb key
+- `ESC` used frequently with vim so put it in thumb cluster
+
+Theoretically `ENTER` could go elsewhere and doesn't need to be on thumb
+
+## Main matrix logic
+
+Here is a list of keys I need on my keyboard not in my thumb cluster
 
 |keys|count|included?|
 |-|-|-|
@@ -22,10 +40,14 @@ Here is a list of keys I need on my keyboard not in my thumb cluster (reserved f
 |Fkeys shift|1|x|
 
 total = 96 symbols
-3 layers = 90 keys
-=> At least 6 symbols must be shifted
-But I only shift 4 on base layer meaning 2 symbols must be dropped
+
+I want to use maximum 3 layers so I have 90 main matrix keys across all layers. This implies at least 6 symbols must be shifted within a layer.
+
+I only shift 4 on base layer (to match default QWERTY) meaning 2 symbols must be dropped
+
 TODO: add F11 and F12 just in case!!!
+
+## Keymap layout in code
 
 ```c
 // -----------------------------------------------------------------------------------------
