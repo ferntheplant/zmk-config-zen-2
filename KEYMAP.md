@@ -11,12 +11,12 @@ Here is a list of keys I need on my keyboard not in my thumb cluster (reserved f
 |home end|2|x|
 |/?|2|x|
 |,. <> ;:|6|x|
-|-_ [] \&#124 |6|x|
+|-_ [] \ &#124 |6|x|
 |=+ {}|4|x|
 |'" `~ =|4|x|
 |F1 through F10|10|x|
 |PREV PLAY NEXT|3|x|
-|Vol+ Vol-|2 x|
+|Vol+ Vol-|2|x|
 |F11 F12|2| |
 |BT0 BT1 BT2 BTC|4|x|
 |Fkeys shift|1|x|
