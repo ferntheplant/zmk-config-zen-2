@@ -11,7 +11,7 @@ Here is a list of keys I need on my keyboard not in my thumb cluster (reserved f
 |home end|2|x|
 |/?|2|x|
 |,. <> ;:|6|x|
-|-_ [] \ &#124 |6|x|
+|-_ [] \ &#124; |6|x|
 |=+ {}|4|x|
 |'" `~ =|4|x|
 |F1 through F10|10|x|
