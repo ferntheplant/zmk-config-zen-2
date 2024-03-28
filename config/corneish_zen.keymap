@@ -2,6 +2,11 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define BASE 0
+#define RIG 1
+#define LEF 2
+#define TRI 3
+
 / {
   chosen {
     //zmk,matrix_transform = &default_transform;
@@ -9,53 +14,76 @@
   };
 };
 
-
-
 / {
+        conditional_layers {
+            compatible = "zmk,conditional-layers";
+            tri_layer {
+                if-layers = <RIG LEF>;
+                then-layer = <TRI>;
+            };
+        };
         keymap {
                 compatible = "zmk,keymap";
 
                 default_layer {
                         display-name = "base";
+// L0 = BASE (base)
 // -----------------------------------------------------------------------------------------
-// | Q   | W   | E   | R   | T   |   | Y   | U   | I   | O   | P    |
-// | A   | S   | D   | F   | G   |   | H   | J   | K   | L   | ;:   |
-// |SFT Z| X   | C   | V   | B   |   | N   | M   | ,<  | .>  |SFT /?|
-//             | CMD |L2 ES|CT SP|   |AL EN|L1 TB| BSPC|
+// | Q   | W   | E   | R   | T   |   | Y   | U   | I   | O   | P   |
+// | A   | S   | D   | F   | G   |   | H   | J   | K   | L   | BSPC|
+// | Z   | X   | C   | V   | B   |   | N   | M   | ,   | .   | ENTR|
+//             | CMD |L1 ES|CT SP|   | SHFT|L2 TB| ALT |
                         bindings = <
-   &kp Q        &kp W &kp E    &kp R      &kp T                &kp Y        &kp U      &kp I      &kp O   &kp P   
-   &kp A        &kp S &kp D    &kp F      &kp G                &kp H        &kp J      &kp K      &kp L   &kp SEMI
-   &mt LSHIFT Z &kp X &kp C    &kp V      &kp B                &kp N        &kp M      &kp COMMA  &kp DOT &mt RSHIFT FSLH
-                      &kp LCMD &lt 2 ESC  &mt LCTRL SPACE      &mt LALT RET &lt 1 TAB  &kp BSPC
-                        >;
-                };
-                num_layer {
-                        display-name = "sym";
-// -----------------------------------------------------------------------------------------
-// | 1   | 2   | 3   | 4   | 5   |   | 6   | 7   | 8   | 9   | 0   |
-// | !   | @   | #   | $   | %   |   | ^   | &   | *   | (   | )   |
-// | -   | _   | =   | +   | \   |   | |   | [   | ]   | {   | }   |
-//             | CMD |L2 ES|CT SP|   |AL EN| HOLD| BSPC|
-                        bindings = <
-   &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6    &kp N7    &kp N8   &kp N9    &kp N0
-   &kp EXCL     &kp AT       &kp HASH     &kp DOLLAR   &kp PERCENT    &kp CARET &kp AMPS  &kp STAR &kp LPAR  &kp RPAR
-   &kp MINUS    &kp UNDER    &kp EQUAL    &kp PLUS     &kp BSLH       &kp PIPE  &kp LBKT  &kp RBKT &kp LBRC  &kp RBRC
-                             &trans       &trans       &trans         &trans    &trans   &trans
+   &kp Q &kp W &kp E    &kp R       &kp T                &kp Y       &kp U       &kp I      &kp O   &kp P   
+   &kp A &kp S &kp D    &kp F       &kp G                &kp H       &kp J       &kp K      &kp L   &kp BSPC
+   &kp Z &kp X &kp C    &kp V       &kp B                &kp N       &kp M       &kp COMMA  &kp DOT &kp ENTER
+               &kp LCMD &lt LEF ESC &mt LCTRL SPACE      &kp LSHIFT  &lt RIG TAB &kp LALT
                         >;
                 };
                 sym_layer {
-                        display-name = "nav";
+                        display-name = "sym";
+// L1 = LEFT (symbol)
 // -----------------------------------------------------------------------------------------
-// | F1  | F2  | F3  | F4  | F5  |   | F6  | F7  | F8  | F9  | F10 |
-// | HOME| END | PREV| PLAY| NEXT|   | LFT | DWN | UP  | RGT | Vol+|
-// | SFT | BT0 | BT1 | BT2 | BT_C|   | '   | "   | `   | ~   | Vol-|
-//             | CMD | HOLD|CT SP|   |AL EN|L1 TB| BSPC|
+// | !   | @   | #   | $   | %   |   | ^   | &   | *   | (   | )   |
+// | \   | -   | =   | '   | `   |   | ;   | /   | <   | [   | ]   |
+// | |   | _   | +   | "   | ~   |   | :   | ?   | >   | {   | }   |
+//             | CMD |L1 ES|CT SP|   | SHFT|L2 TB| ALT |
                         bindings = <
-   &kp F1       &kp F2       &kp F3       &kp F4       &kp F5          &kp F6     &kp F7       &kp F8       &kp F9       &kp F10
-   &kp HOME     &kp END      &kp C_PREV   &kp C_PP     &kp C_NEXT      &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT    &kp C_VOL_UP
-   &kp LSHIFT   &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_CLR      &kp APOS   &kp DQT      &kp GRAVE    &kp TILDE    &kp C_VOL_DN
-                             &trans       &trans       &trans          &trans     &trans       &trans
+   &kp EXCL &kp AT    &kp HASH  &kp DLLR &kp PRCNT       &kp CARET &kp AMPS  &kp STAR &kp LPAR  &kp RPAR
+   &kp BSLH &kp MINUS &kp EQUAL &kp APOS &kp GRAVE       &kp SEMI  &kp FSLH  &kp LT   &kp LBRC  &kp RBRC
+   &kp PIPE &kp UNDER &kp PLUS  &kp DQT  &kp TILDE       &kp COLON &kp QMARK &kp GT   &kp LBKT  &kp RBKT
+                      &trans    &trans   &trans          &trans    &trans    &trans
+                        >;
+                };
+                nav_layer {
+                        display-name = "nav";
+// L2 = RIGHT (nav)
+// -----------------------------------------------------------------------------------------
+// | 1   | 2   | 3   | 4   | 5   |   | 6   | 7   | 8   | 9   | 0   |
+// | CAPS|     |     | INS | DEL |   | LFT | DWN | UP  | RGT |     |
+// |PRINT|     |     |     |     |   | HOME| PGDN| PGUP| END |     |
+//             | CMD |L1 ES|CT SP|   | SHFT|L2 TB| ALT |
+                        bindings = <
+   &kp N1    &kp N2 &kp N3 &kp N4  &kp N5          &kp N6   &kp N7    &kp N8    &kp N9    &kp N0
+   &kp CAPS  &none  &none  &kp INS &kp DEL         &kp LEFT &kp DOWN  &kp UP    &kp RIGHT &none
+   &kp PSCRN &none  &none  &none   &none           &kp HOME &kp PG_UP &kp PG_DN &kp END   &none
+                    &trans &trans  &trans          &trans   &trans    &trans
                         >;
                 };
         };
+                rare_layer {
+                        display-name = "rare";
+// L3 = BOTH (rare)
+// -----------------------------------------------------------------------------------------
+// | F1  | F2  | F3  | F4  | F5  |   | BT0 | BT1 | BT2 | BT3 | BTC |
+// | F6  | F7  | F8  | F9  | F10 |   | PREV| PLAY| NEXT|     |     |
+// | F11 | F12 |     |     |     |   | MUTE| VOL-| VOL+|     |     |
+//             | CMD |L1 ES|CT SP|   | SHFT|L2 TB| ALT |
+                        bindings = <
+   &kp F1  &kp F2  &kp F3 &kp F4 &kp F5          &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR
+   &kp F6  &kp F7  &kp F8 &kp F9 &kp F10         &kp C_PREV   &kp C_PP     &kp C_NEXT   &none        &none
+   &kp F11 &kp F12 &none  &none  &none           &kp C_MUTE   &kp C_VOL_UP &kp C_VOL_DN &none        &none
+                   &trans &trans &trans          &trans       &trans       &trans
+                        >;
+                };
 };
