@@ -70,26 +70,26 @@ In total (assuming identical thumb clusters on all layers) I have 120 main matri
 // | Q   | W   | E   | R   | T   |   | Y   | U   | I   | O   | P   |
 // | A   | S   | D   | F   | G   |   | H   | J   | K   | L   | BSPC|
 // | Z   | X   | C   | V   | B   |   | N   | M   | ,   | .   | ENTR|
-//             | CMD |L1 ES|CT SP|   |SF   |L2 TB|ALT  |
+//             | CMD |L1 ES|CT SP|   | SHFT|L2 TB| ALT |
 
 // L1 = LEFT (symbol)
 // -----------------------------------------------------------------------------------------
 // | !   | @   | #   | $   | %   |   | ^   | &   | *   | (   | )   |
 // | \   | -   | =   | '   | `   |   | ;   | /   | <   | [   | ]   |
 // | |   | _   | +   | "   | ~   |   | :   | ?   | >   | {   | }   |
-//             | CMD |L1 ES|CT SP|   |SF   |L2 TB|ALT  |
+//             | CMD |L1 ES|CT SP|   | SHFT|L2 TB| ALT |
 
 // L2 = RIGHT (nav)
 // -----------------------------------------------------------------------------------------
 // | 1   | 2   | 3   | 4   | 5   |   | 6   | 7   | 8   | 9   | 0   |
 // | CAPS|     |     | INS | DEL |   | LFT | DWN | UP  | RGT |     |
 // |PRINT|     |     |     |     |   | HOME| PGDN| PGUP| END |     |
-//             | CMD |L1 ES|CT SP|   |SF   |L2 TB|ALT  |
+//             | CMD |L1 ES|CT SP|   | SHFT|L2 TB| ALT |
 
 // L3 = BOTH (rare)
 // -----------------------------------------------------------------------------------------
 // | F1  | F2  | F3  | F4  | F5  |   | BT0 | BT1 | BT2 | BT3 | BTC |
 // | F6  | F7  | F8  | F9  | F10 |   | PREV| PLAY| NEXT|     |     |
 // | F11 | F12 |     |     |     |   | MUTE| VOL-| VOL+|     |     |
-//             | CMD |L1 ES|CT SP|   |SF   |L2 TB|ALT  |
+//             | CMD |L1 ES|CT SP|   | SHFT|L2 TB| ALT |
 ```
