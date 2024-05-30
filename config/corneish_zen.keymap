@@ -3,8 +3,8 @@
 #include <dt-bindings/zmk/bt.h>
 
 #define BASE 0
-#define RIG 1
-#define LEF 2
+#define LEF 1
+#define RIG 2
 #define TRI 3
 
 / {
