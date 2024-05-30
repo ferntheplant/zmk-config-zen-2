@@ -18,7 +18,7 @@
         conditional_layers {
             compatible = "zmk,conditional-layers";
             tri_layer {
-                if-layers = <LEF RIGHT>;
+                if-layers = <LEF RIG>;
                 then-layer = <BOTH>;
             };
         };
