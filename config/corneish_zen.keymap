@@ -5,7 +5,7 @@
 #define BASE 0
 #define LEF 1
 #define RIG 2
-#define TRI 3
+#define BOTH 3
 
 / {
   chosen {
@@ -18,8 +18,8 @@
         conditional_layers {
             compatible = "zmk,conditional-layers";
             tri_layer {
-                if-layers = <RIG LEF>;
-                then-layer = <TRI>;
+                if-layers = <LEF RIGHT>;
+                then-layer = <BOTH>;
             };
         };
         keymap {
