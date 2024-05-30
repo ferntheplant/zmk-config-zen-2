@@ -70,7 +70,6 @@
                     &trans &trans  &trans          &trans   &trans    &trans
                         >;
                 };
-        };
                 rare_layer {
                         display-name = "rare";
 // L3 = BOTH (rare)
@@ -86,4 +85,5 @@
                    &trans &trans &trans          &trans       &trans       &trans
                         >;
                 };
+        };
 };
